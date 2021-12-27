@@ -1,11 +1,12 @@
 {
   "name": "mvc-blog",
   "version": "1.0.0",
-  "description": "",
+  "description": "Blog where users are able to use the CRUD functionality",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js",
-    "start": "node src/index.js"
+    "start": "node src/index.js",
+    "seed": "node src/seeds/index.js"
   },
   "repository": {
     "type": "git",
