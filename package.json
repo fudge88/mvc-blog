@@ -1,0 +1,29 @@
+{
+  "name": "mvc-blog",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "start": "node src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fudge88/mvc-blog.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fudge88/mvc-blog/issues"
+  },
+  "homepage": "https://github.com/fudge88/mvc-blog#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "mysql2": "^2.3.3",
+    "sequelize": "^7.0.0-alpha.3"
+  }
+}
