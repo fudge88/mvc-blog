@@ -12,6 +12,14 @@ const schema = {
     primaryKey: true,
     autoIncrement: true,
   },
+  user_id: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    references: {
+      model: "users",
+      key: "id",
+    },
+  },
   blog_id: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -23,6 +31,11 @@ const schema = {
   comment: {
     type: DataTypes.STRING,
     allowNull: false,
+  },
+  created_date: {
+    type: DataTypes.DATE,
+    allowNull: true,
+    defaultValue: DataTypes.NOW,
   },
 };
 
