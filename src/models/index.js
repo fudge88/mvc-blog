@@ -6,6 +6,7 @@ const Users = require("./user");
 // ASSOCIATIONS
 // comments belong to blogs
 Comments.belongsTo(Blogs, {
+  through: Comments,
   foreignKey: "blog_id",
   onDelete: "CASCADE",
 });
@@ -17,6 +18,7 @@ Blogs.hasMany(Comments, {
 
 // comments belong to users
 Comments.belongsTo(Users, {
+  through: Comments,
   foreignKey: "user_id",
   onDelete: "CASCADE",
 });
@@ -28,6 +30,7 @@ Users.hasMany(Comments, {
 
 // blogs belong to users
 Blogs.belongsTo(Users, {
+  through: Blogs,
   foreignKey: "user_id",
   onDelete: "CASCADE",
 });
