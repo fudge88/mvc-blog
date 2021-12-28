@@ -15,27 +15,22 @@ const schema = {
   user_id: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    references: {
-      model: "users",
-      key: "id",
-    },
+    // references: {
+    //   model: "users",
+    //   key: "id",
+    // },
   },
   blog_id: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    references: {
-      model: "blogs",
-      key: "id",
-    },
+    // references: {
+    //   model: "blogs",
+    //   key: "id",
+    // },
   },
   comment: {
     type: DataTypes.STRING,
     allowNull: false,
-  },
-  created_date: {
-    type: DataTypes.DATE,
-    allowNull: true,
-    defaultValue: DataTypes.NOW,
   },
 };
 
@@ -43,8 +38,10 @@ const options = {
   sequelize,
   timestamps: false,
   freezeTableName: true,
+  timestamps: true,
   underscored: true,
-  modelName: "comment",
+
+  modelName: "comments",
 };
 
 Comments.init(schema, options);

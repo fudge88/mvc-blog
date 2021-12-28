@@ -17,16 +17,18 @@ const schema = {
   },
   user_email: {
     type: DataTypes.STRING,
+    unique: true,
     allowNull: false,
+    validate: {
+      isEmail: true,
+    },
   },
   user_password: {
     type: DataTypes.STRING,
     allowNull: false,
-  },
-  created_date: {
-    type: DataTypes.DATE,
-    allowNull: true,
-    defaultValue: DataTypes.NOW,
+    validate: {
+      len: [8, 20],
+    },
   },
 };
 

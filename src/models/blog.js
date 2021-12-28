@@ -15,10 +15,11 @@ const schema = {
   user_id: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    references: {
-      model: "users",
-      key: "id",
-    },
+    unique: true,
+    // references: {
+    //   model: "users",
+    //   key: "id",
+    // },
   },
   blog_title: {
     type: DataTypes.STRING,
@@ -28,11 +29,6 @@ const schema = {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  created_date: {
-    type: DataTypes.DATE,
-    allowNull: true,
-    defaultValue: DataTypes.NOW,
-  },
 };
 
 const options = {
@@ -40,6 +36,7 @@ const options = {
   timestamps: false,
   freezeTableName: true,
   underscored: true,
+  timestamps: true,
   modelName: "blogs",
 };
 
