@@ -1,13 +1,13 @@
 const login = (req, res) => {
-  res.send("login");
+  res.render("login");
 };
 
 const signup = (req, res) => {
-  res.send("signup");
+  res.render("signup");
 };
 
 const logout = (req, res) => {
-  res.send("logout");
+  res.render("home");
 };
 
 module.exports = {

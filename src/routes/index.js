@@ -1,13 +1,13 @@
 const { Router } = require("express");
 
 const api = require("./api");
-const view = require("./view");
+const views = require("./view");
 const auth = require("./auth");
 
 const router = Router();
 
-router.get("/api", api);
-router.get("/", view);
-router.get("/auth", auth);
+router.use("/api", api);
+router.use("/auth", auth);
+router.use("/", views);
 
 module.exports = router;

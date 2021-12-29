@@ -12,4 +12,4 @@ router.get("/signup", renderSignup);
 router.get("/login", renderLogin);
 router.get("/", renderHome);
 
-module.export = router;
+module.exports = router;

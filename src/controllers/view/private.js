@@ -1,8 +1,8 @@
 const renderDashboard = (req, res) => {
-  res.send("renderDashboard");
+  res.render("dashboard");
 };
 const renderHome = (req, res) => {
-  res.send("renderHome");
+  res.render("home");
 };
 
 module.exports = {

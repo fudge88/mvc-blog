@@ -10,4 +10,4 @@ const router = Router();
 router.get("/dashboard", renderDashboard);
 router.get("/", renderHome);
 
-module.export = router;
+module.exports = router;

@@ -5,7 +5,7 @@ const privateRoutes = require("./private-routes");
 
 const router = Router();
 
-router.get(publicRoutes);
-router.get(privateRoutes);
+router.use(publicRoutes);
+router.use(privateRoutes);
 
-module.export = router;
+module.exports = router;

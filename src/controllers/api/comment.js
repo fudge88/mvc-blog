@@ -1,11 +1,5 @@
 const { Comments } = require("../../models/Comment");
 
-const getAllComments = async (req, res) => {
-  res.send("getAllComments");
-};
-const getCommentById = async (req, res) => {
-  res.send("getCommentById");
-};
 const createNewComment = async (req, res) => {
   res.send("createNewComment");
 };
