@@ -13,6 +13,6 @@ router.get("/", createNewUser);
 
 router.get("/login", userLogin);
 
-router.delete("/logout", userLogout);
+router.get("/logout", userLogout);
 
 module.exports = router;
