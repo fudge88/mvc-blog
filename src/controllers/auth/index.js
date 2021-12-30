@@ -29,7 +29,16 @@ const login = async (req, res) => {
         .json({ success: false, error: "User Password incorrect" });
     }
 
-    return res.json({ success: true, data: "Login Successful" });
+    req.session.save(() => {
+      const user = {
+        id: user.get("id"),
+        username: user.get("username"),
+      };
+      req.session.loggedIn = true;
+      req.session.username = user;
+
+      return res.json({ success: true, data: "Login Successful" });
+    });
   } catch (error) {
     console.log(`[ERROR]: Login user failed | ${error.message}`);
     return res
