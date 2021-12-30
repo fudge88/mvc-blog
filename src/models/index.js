@@ -1,41 +1,41 @@
 // import models
-const Blogs = require("./blog");
-const Comments = require("./comment");
-const Users = require("./user");
+const Blog = require("./blog");
+const Comment = require("./comment");
+const User = require("./user");
 
 // ASSOCIATIONS
 // comments belong to blogs
-Comments.belongsTo(Blogs, {
+Comment.belongsTo(Blog, {
   foreignKey: "blog_id",
 });
 
 // blogs have many comments
-Blogs.hasMany(Comments, {
+Blog.hasMany(Comment, {
   foreignKey: "blog_id",
 });
 
 // comments belong to users
-Comments.belongsTo(Users, {
+Comment.belongsTo(User, {
   foreignKey: "user_id",
 });
 
 // users have many comments
-Users.hasMany(Comments, {
+User.hasMany(Comment, {
   foreignKey: "user_id",
 });
 
 // blogs belong to users
-Blogs.belongsTo(Users, {
+Blog.belongsTo(User, {
   foreignKey: "user_id",
 });
 
 // users have many blogs
-Users.hasMany(Blogs, {
+User.hasMany(Blog, {
   foreignKey: "user_id",
 });
 
 module.exports = {
-  Blogs,
-  Comments,
-  Users,
+  Blog,
+  Comment,
+  User,
 };
