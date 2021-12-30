@@ -11,8 +11,6 @@ const deleteComment = async (req, res) => {
 };
 
 module.exports = {
-  getAllComments,
-  getCommentById,
   createNewComment,
   updateComment,
   deleteComment,

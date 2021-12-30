@@ -1,11 +1,11 @@
 const renderSignup = (req, res) => {
-  res.send("renderSignup");
+  res.render("signup");
 };
 const renderLogin = (req, res) => {
-  res.send("renderLogin");
+  res.render("login");
 };
 const renderHome = (req, res) => {
-  res.send("renderHome");
+  res.render("home");
 };
 
 module.exports = {
