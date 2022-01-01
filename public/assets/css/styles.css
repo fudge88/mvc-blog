@@ -14,13 +14,16 @@ body {
 }
 
 /* navbar */
+
+.logo {
+  height: 15rem;
+}
 .page-title {
-  margin: 16px;
-  font-size: 96px;
   color: #ccc;
-  text-transform: uppercase;
-  font-weight: 600;
   text-align: center;
+}
+.navbar-style {
+  background-color: rgba(0, 0, 0, 0.514);
 }
 
 .navbar-nav {
@@ -29,10 +32,21 @@ body {
   display: block;
   text-align: center;
 }
-
+.navbar-toggler-icon {
+  color: #ccc;
+}
 .navbar-nav > li {
   display: inline-block;
   float: none;
+}
+
+/* background image */
+.background-img {
+  height: 500px;
+  background-image: url(../img/forrest.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
 }
 
 /* masonry style grid */
