@@ -9,21 +9,16 @@ body {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: white;
-  font-family: "lato", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 
 /* navbar */
 
-.logo {
-  height: 15rem;
-}
-.page-title {
-  color: #ccc;
-  text-align: center;
-}
-.navbar-style {
-  background-color: rgba(0, 0, 0, 0.514);
+.logo img {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 12rem;
 }
 
 .navbar-nav {
@@ -32,23 +27,28 @@ body {
   display: block;
   text-align: center;
 }
-.navbar-toggler-icon {
-  color: #ccc;
-}
+
 .navbar-nav > li {
   display: inline-block;
   float: none;
 }
-
-/* background image */
-.background-img {
-  height: 500px;
-  background-image: url(../img/forrest.jpg);
-  background-position: center;
-  background-size: cover;
-  position: relative;
+.navbar-light .navbar-nav .nav-link {
+  color: #0000008c;
+  font-family: "Road Rage", cursive;
+  text-transform: uppercase;
+  font-size: 2.5rem;
 }
 
+.hero-img {
+  width: 33.33%;
+  padding: 3;
+}
+.banner {
+  background-color: #0a5e0a;
+  padding: 1rem;
+  font-family: "Road Rage", cursive;
+  color: #ffffff;
+}
 /* masonry style grid */
 .grid {
   margin-top: 3rem;
@@ -64,6 +64,17 @@ body {
 
 .photothumb {
   width: 100%;
+}
+
+.blog-title {
+  margin-top: 2rem;
+  padding: 2px 10px;
+  background-color: rgba(7, 7, 7, 0.61);
+  width: fit-content;
+  font-family: "Road Rage", cursive;
+  color: #ffffff;
+  position: absolute;
+  z-index: 1;
 }
 
 .desc {
@@ -181,18 +192,12 @@ body {
 }
 
 @media (max-width: 576px) {
-  ...;
+  .logo img {
+    height: 8rem;
+  }
 }
 
 @media (max-width: 768px) {
-  .page-title {
-    margin: 16px;
-    font-size: 60px;
-    color: #ccc;
-    text-transform: uppercase;
-    font-weight: 600;
-    text-align: center;
-  }
 }
 
 @media (max-width: 992px) {
