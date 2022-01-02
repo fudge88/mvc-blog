@@ -14,7 +14,9 @@ const handleSubmit = async (event) => {
   });
 
   const data = await response.json();
-  console.log(data);
+  if (data) {
+    window.location.href = "dashBoard";
+  }
 };
 
 formElement.on("submit", handleSubmit);
