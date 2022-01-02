@@ -1,6 +1,7 @@
-const formElement = $("#login-form");
+const loginForm = $("#login-form");
+const signupForm = $("#signup-form");
 
-const handleSubmit = async (event) => {
+const handleLogin = async (event) => {
   event.preventDefault();
   const email = $("#email-input").val();
   const password = $("#password-input").val();
@@ -14,12 +15,35 @@ const handleSubmit = async (event) => {
   });
 
   const data = await response.json();
-  if (data) {
-    window.location.href = "dashBoard";
+
+  if (data.success) {
+    window.location.replace("/dashboard");
   }
 };
 
-formElement.on("submit", handleSubmit);
+const handleSignup = async (event) => {
+  event.preventDefault();
+  const email = $("#email-input").val();
+  const username = $("#username-input").val();
+  const password = $("#password-input").val();
+
+  const response = await fetch("/auth/signup", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ username, email, password }),
+  });
+
+  const data = await response.json();
+
+  if (data.success) {
+    window.location.replace("/dashboard");
+  }
+};
+
+loginForm.on("submit", handleLogin);
+signupForm.on("submit", handleSignup);
 
 // masonry grid
 function resizeGridItem(item) {

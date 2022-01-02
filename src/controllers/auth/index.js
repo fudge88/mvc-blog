@@ -29,13 +29,14 @@ const login = async (req, res) => {
         .json({ success: false, error: "User Password incorrect" });
     }
 
+    const userInSess = {
+      id: user.get("id"),
+      username: user.get("username"),
+    };
+
     req.session.save(() => {
-      const user = {
-        id: user.get("id"),
-        username: user.get("username"),
-      };
       req.session.loggedIn = true;
-      req.session.username = user;
+      req.session.username = userInSess;
 
       return res.json({ success: true, data: "Login Successful" });
     });
@@ -59,9 +60,9 @@ const signup = async (req, res) => {
         .json({ success: false, error: "please complete all fields" });
     }
 
-    const user = await User.create(payload);
+    await User.create(payload);
 
-    return res.json({ success: true, data: user });
+    return res.json({ success: true, data: "Successfully created user" });
   } catch (error) {
     console.log(`[ERROR]: Create user failed | ${error.message}`);
     return res
