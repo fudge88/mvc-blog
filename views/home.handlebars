@@ -1,1 +1,258 @@
-<h1>HOME</h1>
+<header>
+    {{#if loggedIn}}
+    {{> private-nav}}
+    {{else}}
+    {{> public-nav}}
+    {{/if}}
+</header>
+
+<main>
+    
+
+    <!-- row of 3 images -->
+    <div class="container">
+      <div class="row">
+        <div class="column hero-img">
+          <img
+            src="https://images.unsplash.com/photo-1542202229-7d93c33f5d07?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Zm9yZXN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+            alt="Mountains"
+            style="width: 100%"
+          />
+        </div>
+        <div class="column hero-img">
+          <img
+            src="https://images.unsplash.com/photo-1498855926480-d98e83099315?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fG1vdW50YWlufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+            alt="Snow"
+            style="width: 100%"
+          />
+        </div>
+        <div class="column hero-img">
+          <img
+            src="https://images.unsplash.com/photo-1622630285247-8ee379e1e3e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHdvb2RsYW5kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+            alt="Forest"
+            style="width: 100%"
+          />
+        </div>
+      </div>
+    </div>
+
+    <!-- banner -->
+    <div class="container banner mt-4">
+      <h2 class="text-center">Off The GRID - Trails Treks Trips and Tips</h2>
+    </div>
+
+    <div class="container mt-4">
+      <h2 class="text-center">Start Exploring</h2>
+    </div>
+    <!-- grid -->
+
+    <div class="container grid">
+      <div class="item blog">
+        <div class="content">
+          <h3 class="blog-title">Title goes here</h3>
+          <div class="desc">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+              facilisis fringilla laoreet. Mauris mattis enim ut felis
+              consectetur, vitae lacinia enim auctor. Aenean vitae fermentum
+              odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              dictum non orci ut dignissim. Fusce fermentum felis aliquam,
+              mattis nibh ut, faucibus leo. Sed lectus libero, volutpat at eros
+              quis, venenatis tempus neque. Nulla vel faucibus orci, nec
+              convallis ligula. Quisque maximus gravida orci, in lacinia mauris
+              pretium nec. Sed et enim bibendum, fermentum tellus eu, eleifend
+              ex. Aliquam lectus magna, sollicitudin vitae placerat ac, semper
+              ut risus. Nunc vestibulum lacus.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="item photo">
+        <div class="content">
+          <h3 class="blog-title">Title goes here</h3>
+          <img
+            class="photothumb"
+            src="https://assets.codepen.io/881020/dog1.jpg"
+          />
+          <div class="desc">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+              facilisis fringilla laoreet. Mauris mattis enim ut felis
+              consectetur, vitae lacinia enim auctor. Aenean vitae fermentum
+              odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              dictum non orci ut dignissim. Fusce fermentum felis aliquam,
+              mattis nibh ut, faucibus leo. Sed lectus libero, volutpat at eros
+              quis, venenatis tempus neque. Nulla vel .
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="item photo">
+        <div class="content">
+          <img
+            class="photothumb"
+            src="https://assets.codepen.io/881020/dog2.jpg"
+          />
+          <div class="desc">
+            <p>Lorem ipsum dolor sit amet, conse</p>
+          </div>
+        </div>
+      </div>
+      <div class="item project">
+        <div class="content">
+          <div class="desc">
+            <img src="https://assets.codepen.io/881020/dog3.jpg" />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+              facilisis fringilla laoreet. Mauris mattis enim ut felis
+              consectetur, vitae lacinia enim auctor. Aenean vitae fermentum
+              odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              dictum non orci ut dignissim. Fusce fermentum felis aliquam,
+              mattis nibh ut, faucibus leo. Sed lectus libero, volutpat at eros
+              quis, venenatis tempus neque. Nulla vel faucibus orci, nec
+              convallis ligula. Quisque maximus gravida orci, in lacinia mauris
+              pretium nec. Sed et enim bibendum, fermentum tellus eu, eleifend
+              ex. Aliquam lectus magna, sollicitudin vitae placerat ac, semper
+              ut risus. Nunc vestibulum lacus et nulla volutpat auctor.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="item project">
+        <div class="content">
+          <div class="desc">
+            <img src="https://assets.codepen.io/881020/dog4.jpg" />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+              facilisis fringilla laoreet. Mauris mattis enim ut felis
+              consectetur, vitae lacinia enim auctor. Aenean vitae fermentum
+              odio. Lorem, nec convallis ligula. Quisque maximus
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="item blog">
+        <div class="content">
+          <div class="desc">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+              facilisis fringilla laoreet. Mauris mattis enim ut felis
+              consectetur, vitae lacinia enim auctor. Aenean vitae fermentum
+              odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              dictum non orci ut dignissim. Fusce fermentum felis aliquam,
+              mattis nibh ut, faucibus leo. Sed lectus libero, volutpat at eros
+              quis, venenatis tempus neque. Nulla vel faucibus orci, nec
+              convallis ligula. Quisque maximus gravida orci, in lacinia mauris
+              pretium nec. Sed et enim bibendum, fermentum tellus eu, eleifend
+              ex. Aliquam lectus magna, sollicitudin vitae placerat ac, semper
+              ut risus. Nunc vestibulum lacus et nulla volutpat auctor.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+              facilisis fringilla laoreet. Mauris mattis enim ut felis
+              consectetur, vitae lacinia enim auctor. Aenean vitae fermentum
+              odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              dictum non orci ut dignissim. Fusce fermentum felis aliquam,
+              mattis nibh
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+              facilisis fringilla laoreet. Mauris mattis enim ut felis
+              consectetur, vitae lacinia enim auctor. Aenean vitae fermentum
+              odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              dictum non orci ut dignissim. Fusce fermentum felis aliquam,
+              mattis nibh
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="item project">
+        <div class="content">
+          <div class="desc">
+            <img src="https://assets.codepen.io/881020/dog5.jpg" />
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+              facilisis fringilla laoreet. Mauris mattis enim ut felis
+              consectetur, vitae lacinia enim auctor. Aenean vitae fermentum
+              odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              dictum non orci ut dignissim. Fusce fermentum felis aliquam,
+              mattis nibh ut, faucibus leo. Sed lectus libero, volutpat at eros
+              quis, venenatis tempus neque. Nulla vel faucibus orci, nec
+              convallis ligula. Quisque maximus gravida orci, in lacinia mauris
+              pretium nec. Sed et enim bibendum, fermentum tellus eu, eleifend
+              ex. Aliquam lectus magna, sollicitudin vitae placerat ac, semper
+              ut risus. Nunc vestibulum lacus et nulla volutpat auctor.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="item blog">
+        <div class="content">
+          <div class="desc">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+              facilisis fringilla laoreet. Mauris mattis enim ut felis
+              consectetur, vitae lacinia enim auctor. Aenean vitae fermentum
+              odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              dictum non orci ut dignissim. Semper ut risus.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="item photo">
+        <div class="content">
+          <img
+            class="photothumb"
+            src="https://assets.codepen.io/881020/dog2.jpg"
+          />
+          <div class="desc">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+              facilisis
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="item blog">
+        <div class="content">
+          <div class="desc">
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+              facilisis fringilla laoreet. Mauris mattis enim ut felis
+              consectetur, vitae lacinia enim auctor. Aenean vitae fermentum
+              odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              dictum non orci ut dignissim. Fusce fermentum felis aliquam,
+              mattis nibh ut, faucibus leo. Sed lectus libero, volutpat at eros
+              quis, venenatis tempus neque. Nulla vel faucibus orci, nec
+              convallis ligula. Quisque maximus gravida orci, in lacinia mauris
+              pretium nec. Sed et enim bibendum, fermentum tellus eu, eleifend
+              ex. Aliquam lectus magna, sollicitudin vitae placerat ac, semper
+              ut risus.
+            </p>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce
+              facilisis fringilla laoreet. Mauris mattis enim ut felis
+              consectetur, vitae lacinia enim auctor. Aenean vitae fermentum
+              odio. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
+              dictum non orci ut dignissim. Fusce fermentum felis aliquam,
+              mattis nibh ut, faucibus leo. Sed lectus libero, volutpat at eros
+              quis, venenatis tempus neque. Nulla vel faucibus orci, nec
+              convallis ligula. Quisque maximus gravida orci, in lacinia mauris
+              pretium nec. Sed et enim bibendum, fermentum tellus eu, eleifend
+              ex. Aliquam lectus magna, sollicitudin vitae placerat ac, semper
+              ut risus.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+</main>
+
+<section>
+    {{>blog-input}}
+</section>
+
+<footer>
+    {{> footer}}
+</footer>

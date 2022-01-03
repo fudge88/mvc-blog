@@ -1,12 +1,14 @@
 const loginForm = $("#login-form");
 const signupForm = $("#signup-form");
+const logoutBtn = $("#logout");
 
 const handleLogin = async (event) => {
   event.preventDefault();
+
   const email = $("#email-input").val();
   const password = $("#password-input").val();
 
-  const response = await fetch("http://localhost:4000/auth/login", {
+  const response = await fetch("/auth/login", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -23,6 +25,7 @@ const handleLogin = async (event) => {
 
 const handleSignup = async (event) => {
   event.preventDefault();
+
   const email = $("#email-input").val();
   const username = $("#username-input").val();
   const password = $("#password-input").val();
@@ -42,8 +45,23 @@ const handleSignup = async (event) => {
   }
 };
 
+const handleLogout = async () => {
+  console.log("click");
+  const response = await fetch("/auth/logout", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+  const data = await response.json();
+  if (data.success) {
+    window.location.replace("/");
+  }
+};
+
 loginForm.on("submit", handleLogin);
 signupForm.on("submit", handleSignup);
+logoutBtn.on("click", handleLogout);
 
 // masonry grid
 function resizeGridItem(item) {

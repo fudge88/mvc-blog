@@ -7,6 +7,7 @@ const login = async (req, res) => {
       ["email", "password"],
       req.body
     );
+
     if (Object.keys(payload).length !== 2) {
       return res
         .status(400)
@@ -29,14 +30,15 @@ const login = async (req, res) => {
         .json({ success: false, error: "User Password incorrect" });
     }
 
-    const userInSess = {
+    const userInSession = {
       id: user.get("id"),
+      email: user.get("email"),
       username: user.get("username"),
     };
 
     req.session.save(() => {
       req.session.loggedIn = true;
-      req.session.username = userInSess;
+      req.session.user = userInSession;
 
       return res.json({ success: true, data: "Login Successful" });
     });
@@ -72,7 +74,15 @@ const signup = async (req, res) => {
 };
 
 const logout = (req, res) => {
-  res.render("home");
+  if (req.session.loggedIn) {
+    req.session.destroy(() => {
+      return res
+        .status(204)
+        .json({ success: true, data: "Successfully logged out" });
+    });
+  } else {
+    return res.status(404).json({ success: false, error: "Failed to logout" });
+  }
 };
 
 module.exports = {

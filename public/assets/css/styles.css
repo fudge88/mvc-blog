@@ -104,7 +104,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  height: 50vh;
 }
 
 .form {
@@ -116,8 +116,9 @@ body {
 }
 
 .title {
-  font-size: 50px;
-  margin-bottom: 50px;
+  font-family: "Road Rage", cursive;
+  font-size: 4rem;
+  margin-bottom: 2rem;
 }
 
 .inputContainer {
@@ -136,7 +137,7 @@ body {
   border: 1px solid var(--haze);
   border-radius: 7px;
   font-size: 16px;
-  padding: 0 20px;
+  padding: 10px 20px;
   outline: none;
   background: none;
   z-index: 1;
@@ -199,6 +200,33 @@ body {
   font-weight: 600;
 }
 
+/* dashboard */
+.parent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.blog-container {
+  flex: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.comment-container {
+  flex: 30%;
+  width: 200px;
+  padding: 5px;
+  background-color: violet;
+}
+
+.comment-container .card-body {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
 /* footer */
 .footer-basic {
   padding: 40px 0;
@@ -250,6 +278,10 @@ body {
 }
 
 @media (max-width: 1200px) {
+  .blog-container,
+  .comment-container {
+    flex: 100%;
+  }
 }
 
 @media (max-width: 1400px) {

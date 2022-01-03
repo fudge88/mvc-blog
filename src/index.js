@@ -6,18 +6,18 @@ const path = require("path");
 const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
 
-const connection = require("./config/connection");
 const routes = require("./routes");
+const connection = require("./config/connection");
 
 const PORT = process.env.PORT || 4000;
 
 const sessionOptions = {
   secret: process.env.SESSION_SECRET,
   cookie: {
-    maxAge: 86400,
+    maxAge: 86400 * 1000,
   },
   resave: false,
-  saveUninitialized: true,
+  saveUninitialized: false,
   store: new SequelizeStore({
     db: connection,
   }),
