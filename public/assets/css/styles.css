@@ -132,7 +132,6 @@ body {
   position: absolute;
   top: 0px;
   left: 0px;
-  height: 100%;
   width: 100%;
   border: 1px solid var(--haze);
   border-radius: 7px;
@@ -218,7 +217,7 @@ body {
   flex: 30%;
   width: 200px;
   padding: 5px;
-  background-color: violet;
+  background-color: var(--haze);
 }
 
 .comment-container .card-body {

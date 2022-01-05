@@ -8,6 +8,5 @@ const {
 const router = Router();
 
 router.get("/dashboard", renderDashboard);
-router.get("/", renderHome);
 
 module.exports = router;

@@ -1,8 +1,8 @@
 const { Model, DataTypes } = require("sequelize");
+const bcrypt = require("bcrypt");
 
 const connection = require("../config/connection");
-
-class Users extends Model {}
+const hashPassword = require("../hooks/hashPassword");
 
 const schema = {
   id: {
@@ -15,7 +15,7 @@ const schema = {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  user_email: {
+  email: {
     type: DataTypes.STRING,
     unique: true,
     allowNull: false,
@@ -23,23 +23,33 @@ const schema = {
       isEmail: true,
     },
   },
-  user_password: {
+  password: {
     type: DataTypes.STRING,
     allowNull: false,
     validate: {
-      len: [8, 20],
+      len: [6, 20],
     },
   },
 };
 
 const options = {
   sequelize: connection,
-  modelName: "users",
+  modelName: "user",
   freezeTableName: true,
   timestamps: true,
   underscored: true,
+  hooks: {
+    beforeCreate: hashPassword,
+  },
 };
 
-Users.init(schema, options);
+class User extends Model {
+  async checkPassword(userPassword) {
+    const isValid = await bcrypt.compare(userPassword, this.password);
+    return isValid;
+  }
+}
 
-module.exports = Users;
+User.init(schema, options);
+
+module.exports = User;

@@ -3,7 +3,7 @@ const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection.js");
 
 // comment class & schema
-class Comments extends Model {}
+class Comment extends Model {}
 
 const schema = {
   id: {
@@ -15,18 +15,18 @@ const schema = {
   user_id: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    // references: {
-    //   model: "users",
-    //   key: "id",
-    // },
+    references: {
+      model: "user",
+      key: "id",
+    },
   },
   blog_id: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    // references: {
-    //   model: "blogs",
-    //   key: "id",
-    // },
+    references: {
+      model: "blog",
+      key: "id",
+    },
   },
   comment: {
     type: DataTypes.STRING,
@@ -40,10 +40,9 @@ const options = {
   freezeTableName: true,
   timestamps: true,
   underscored: true,
-
-  modelName: "comments",
+  modelName: "comment",
 };
 
-Comments.init(schema, options);
+Comment.init(schema, options);
 
-module.exports = Comments;
+module.exports = Comment;

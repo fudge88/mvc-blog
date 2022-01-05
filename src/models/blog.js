@@ -3,7 +3,7 @@ const { Model, DataTypes } = require("sequelize");
 const sequelize = require("../config/connection.js");
 
 // blog class & schema
-class Blogs extends Model {}
+class Blog extends Model {}
 
 const schema = {
   id: {
@@ -15,13 +15,12 @@ const schema = {
   user_id: {
     type: DataTypes.INTEGER,
     allowNull: false,
-    unique: true,
-    // references: {
-    //   model: "users",
-    //   key: "id",
-    // },
+    references: {
+      model: "user",
+      key: "id",
+    },
   },
-  blog_title: {
+  title: {
     type: DataTypes.STRING,
     allowNull: false,
   },
@@ -37,9 +36,9 @@ const options = {
   freezeTableName: true,
   underscored: true,
   timestamps: true,
-  modelName: "blogs",
+  modelName: "blog",
 };
 
-Blogs.init(schema, options);
+Blog.init(schema, options);
 
-module.exports = Blogs;
+module.exports = Blog;
