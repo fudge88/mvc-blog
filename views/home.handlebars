@@ -69,19 +69,19 @@
         <div class="content">
           <div class="desc">
             <div class="display-6 mb-1">{{title}}</div>
-            <img src="" />
+            <img src="{{image}}" />
             <p>
               {{blog}}
               <a href="/blog/view/"> view</a>
             </p>
           </div>
-          <div class="font-italic text-end h5"><u></u></div>
+          <div class="font-italic text-end h5"><u>{{username}}</u></div>
         </div>
       </div>
     {{else}}
       <div class="item photo blog-card">
         <div class="content">
-          <img class="photothumb" src="" />
+          <img class="photothumb" src="{{image}}" />
           <div class="display-6 mb-1">{{title}}</div>
           <div class="desc">
             <p>
