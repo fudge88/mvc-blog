@@ -1,3 +1,4 @@
+const { logError } = require("../../utils/logger");
 const { Comments } = require("../../models/Comment");
 
 const createNewComment = async (req, res) => {

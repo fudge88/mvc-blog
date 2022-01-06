@@ -1,3 +1,5 @@
+const { logError } = require("../../utils/logger");
+
 const { Blogs } = require("../../models/Blog");
 
 const getAllBlogs = async (req, res) => {

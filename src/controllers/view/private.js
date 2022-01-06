@@ -5,5 +5,4 @@ const renderDashboard = (req, res) => {
 
 module.exports = {
   renderDashboard,
-  renderHome,
 };
