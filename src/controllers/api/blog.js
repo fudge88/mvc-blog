@@ -2,12 +2,6 @@ const { logError } = require("../../utils/logger");
 
 const { Blogs } = require("../../models/Blog");
 
-const getAllBlogs = async (req, res) => {
-  res.send("getAllBlogs");
-};
-const getBlogById = async (req, res) => {
-  res.send("getBlogById");
-};
 const createNewBlog = async (req, res) => {
   res.send("createNewBlog");
 };
@@ -19,8 +13,6 @@ const deleteBlog = async (req, res) => {
 };
 
 module.exports = {
-  getAllBlogs,
-  getBlogById,
   createNewBlog,
   updateBlog,
   deleteBlog,

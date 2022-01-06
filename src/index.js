@@ -5,6 +5,7 @@ const expressHandlebars = require("express-handlebars");
 const path = require("path");
 const session = require("express-session");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
+const hbsHelpers = require("./helpers/hbs-helpers");
 
 const routes = require("./routes");
 const connection = require("./config/connection");
@@ -23,7 +24,10 @@ const sessionOptions = {
   }),
 };
 
-const hbs = expressHandlebars.create({});
+const hbs = expressHandlebars.create({
+  helpers: hbsHelpers,
+});
+
 const app = express();
 
 app.engine("handlebars", hbs.engine);

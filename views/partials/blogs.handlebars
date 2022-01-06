@@ -1,20 +1,13 @@
-<div>
-  {{#each blogs}}
-    <a href="{{id}}" class="btn btn-primary">
-      <div class="item photo">
-        <div class="content">
-          <h3 class="blog-title">{{title}}</h3>
-          <img
-            class="photothumb"
-            src="https://assets.codepen.io/881020/dog1.jpg"
-          />
-          <div class="desc">
-            <p>
-              {{blog}}
-            </p>
-          </div>
-        </div>
+<a href="/blog/{{id}}" class="btn btn-primary">
+  <div class="item photo">
+    <div class="content">
+      <h3 class="blog-title">{{title}}</h3>
+      <img class="photothumb" src="https://assets.codepen.io/881020/dog1.jpg" />
+      <div class="desc">
+        <p>
+          {{blog}}
+        </p>
       </div>
-    </a>
-  {{/each}}
-</div>
+    </div>
+  </div>
+</a>
