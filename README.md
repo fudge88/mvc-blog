@@ -4,7 +4,7 @@
 
 ### mvc-blog
 
-#### You can view the deployed app by [clicking here!](https://fudge88.github.io/day-planner-app/)
+#### You can view the deployed app by [clicking here!](https://mvc-trekking-blog.herokuapp.com/)
 
 ## Table of Contents
 
