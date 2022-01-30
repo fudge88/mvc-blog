@@ -1,14 +1,14 @@
 const { Blog } = require("../../models");
-const { getPayloadWithValidFieldsOnly } = require("../../helpers");
+const { getPayloadWithValidFieldsOnly } = require("../../util");
 
 const createBlog = async (req, res) => {
   try {
     const payload = getPayloadWithValidFieldsOnly(
-      ["title", "content"],
+      ["title", "content", "blogImg"],
       req.body
     );
 
-    if (Object.keys(payload).length !== 2) {
+    if (Object.keys(payload).length !== 3) {
       console.log(`[ERROR]: Failed to create blog | Invalid fields`);
       return res.status(400).json({ success: false });
     }

@@ -96,12 +96,14 @@ const handleCreateBlog = async (event) => {
 
   const title = $("#title").val();
   const content = $("#content").val();
+  const blogImg = $("blogImg").val();
 
-  if (title && content) {
+  if (title && content && blogImg) {
     try {
       const data = await makeRequest("/api/blogs", "POST", {
         title,
         content,
+        blogImg,
       });
 
       if (data.success) {
@@ -153,12 +155,14 @@ const handleEditBlog = async (event) => {
 
   const title = $("#title").val();
   const content = $("#content").val();
+  const blogImg = $("blogImg").val();
 
-  if (title && content) {
+  if (title && content && blogImg) {
     try {
       const data = await makeRequest(`/api/blogs/${blogId}`, "PUT", {
         title,
         content,
+        blogImg,
       });
 
       if (data.success) {

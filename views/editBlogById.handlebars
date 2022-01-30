@@ -1,0 +1,36 @@
+<main>
+  {{> private-navbar}}
+
+  <div class="container">
+    <div class="banner mt-4">
+      <h3 class="text-center">Post Your Blog</h3>
+    </div>
+    <form class="mt-4" id="edit-blog-form">
+      <div class="inputContainer">
+        <input type="text" class="input" id="title" placeholder="a" value="{{title}}"/>
+        <label for="title" class="label">Update your title</label>
+      </div>
+        <div class="inputContainer">
+        <input type="text" class="input" id="blogImg" placeholder="a" value="{{title}}"/>
+        <label for="blogImg" class="label">Update your Image URL</label>
+      </div>
+      <div class="inputContainer">
+        <textarea
+          rows="3"
+          class="input"
+          id="content"
+          placeholder="a"
+        >{{content}}</textarea>
+        <label for="content" class="label">Update your blog</label>
+      </div>
+      <div class="form-group row mt-5">
+        <div class="col">
+          <button type="submit" class="submitBtn mt-5">Update Blog</button>
+        </div>
+      </div>
+      <div class="mb-3 text-center">
+        <div id="error-message" class="form-text text-danger"></div>
+      </div>
+    </form>
+  </div>
+</main>

@@ -1,15 +1,11 @@
-<div class="card" style="width: 18rem">
-  <img class="card-img-top" src={{blogImg}} alt="Card image cap" />
+<div class="card m-3" style="width: 18rem;">
   <div class="card-body">
+    <img class="blog-img" src="{{blogImg}}" alt="trek image" />
     <h5 class="card-title">{{title}}</h5>
-    <p class="card-text">
-      {{content}}
-    </p>
     <h6 class="card-subtitle mb-2 text-muted">Posted by: {{user.username}}</h6>
-    <div class="text-center">
-      <a href="/blogs/{{id}}" class="card-link">View Blog</a>
-      <a href="#" class="card-link">Edit <i class="fas fa-pen"></i></a>
-      <a href="#" class="card-link">Delete <i class="fas fa-trash"></i></a>
-    </div>
+    <p class="card-text text-ellipsis--2">{{content}}</p>
+  </div>
+  <div class="card-footer text-center">
+    <a href="/blogs/{{id}}" class="card-link">View Blog</a>
   </div>
 </div>

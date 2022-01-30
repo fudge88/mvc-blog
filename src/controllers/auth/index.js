@@ -1,7 +1,7 @@
 const bcrypt = require("bcrypt");
 
 const { User } = require("../../models");
-const { getPayloadWithValidFieldsOnly } = require("../../helpers");
+const { getPayloadWithValidFieldsOnly } = require("../../util");
 
 const login = async (req, res) => {
   try {

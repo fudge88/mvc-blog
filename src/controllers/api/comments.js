@@ -1,5 +1,5 @@
 const { Comment } = require("../../models");
-const { getPayloadWithValidFieldsOnly } = require("../../helpers");
+const { getPayloadWithValidFieldsOnly } = require("../../util");
 
 const createComment = async (req, res) => {
   try {

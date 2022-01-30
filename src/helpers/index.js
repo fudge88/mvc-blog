@@ -1,10 +1,3 @@
-const getPayloadWithValidFieldsOnly = (validFields, payload) =>
-  Object.entries(payload).reduce(
-    (acc, [key, value]) =>
-      validFields.includes(key) ? { ...acc, [key]: value } : acc,
-    {}
-  );
-
 const moment = require("moment");
 
 const formatDate = (date) => {
@@ -16,6 +9,5 @@ const helpers = {
 };
 
 module.exports = {
-  getPayloadWithValidFieldsOnly,
-  helpers,
+  formatDate,
 };
