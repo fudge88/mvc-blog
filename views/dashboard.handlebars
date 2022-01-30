@@ -1,80 +1,35 @@
 <header>
-    {{> private-nav}}
+    {{> private-navbar}}
 </header>
 
 <main>
-        <div class="container text-center">
-      <h1>Hi {{username}}</h1>
-      <h3 class="container banner mt-4">
-        Collection of Your Histroic Blogs and Comments
-      </h3>
-    </div>
+  <div class="container text-center">
+    <h1>Hi {{user.username}}</h1>
+    {{#if blogCount}}
+    <h3 class="container banner mt-4">
+      You have currently have {{blogCount}} blog(s)
+    </h3>
+    {{else}}
+    <h3 class="container banner mt-4">
+      You currently have no Blogs/Comments
+    </h3>
+    {{/if}}
+  </div>
 
+    {{!-- blogs --}}
     <div class="container parent">
       <div class="blog-container">
-        <!-- card1 -->
-        <div class="card" style="width: 18rem">
-          <img
-            class="card-img-top"
-            src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_17e1d105a95%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_17e1d105a95%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1953125%22%20y%3D%2296.3%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
-            alt="Card image cap"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Blog title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <div class="text-center">
-              <a href="#" class="card-link">Edit <i class="fas fa-pen"></i></a>
-              <a href="#" class="card-link"
-                >Delete <i class="fas fa-trash"></i
-              ></a>
-            </div>
-          </div>
+        {{#if blogs.length}}
+        <div class="d-flex flex-row justify-content-evenly flex-wrap">
+          {{#each blogs}}
+            {{> blog-card}}
+          {{/each}}
         </div>
-        <!-- card2 -->
-        <div class="card" style="width: 18rem">
-          <img
-            class="card-img-top"
-            src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_17e1d105a95%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_17e1d105a95%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1953125%22%20y%3D%2296.3%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
-            alt="Card image cap"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Blog title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <div class="text-center">
-              <a href="#" class="card-link">Edit <i class="fas fa-pen"></i></a>
-              <a href="#" class="card-link"
-                >Delete <i class="fas fa-trash"></i
-              ></a>
-            </div>
-          </div>
+        {{else}}
+        <div class="alert alert-dark text-center" role="alert">
+          <h3 class="mt-2">Get Blogging {{user.username}}, you currently have no blogs!</h3>
         </div>
-        <!-- card3 -->
-        <div class="card" style="width: 18rem">
-          <img
-            class="card-img-top"
-            src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22286%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20286%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_17e1d105a95%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A14pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_17e1d105a95%22%3E%3Crect%20width%3D%22286%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22107.1953125%22%20y%3D%2296.3%22%3E286x180%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E"
-            alt="Card image cap"
-          />
-          <div class="card-body">
-            <h5 class="card-title">Blog title</h5>
-            <p class="card-text">
-              Some quick example text to build on the card title and make up the
-              bulk of the card's content.
-            </p>
-            <div class="text-center">
-              <a href="#" class="card-link">Edit <i class="fas fa-pen"></i></a>
-              <a href="#" class="card-link"
-                >Delete <i class="fas fa-trash"></i
-              ></a>
-            </div>
-          </div>
-        </div>
+      {{/if}}
       </div>
 
       <!-- comments history -->

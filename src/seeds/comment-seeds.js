@@ -2,18 +2,18 @@ const Comment = require("../models/Comment");
 
 const commentData = [
   {
-    user_id: 3,
-    blog_id: 2,
+    userId: 3,
+    blogId: 2,
     comment: "This is a comment for blog 1",
   },
   {
-    user_id: 2,
-    blog_id: 2,
+    userId: 2,
+    blogId: 2,
     comment: "This is a comment for blog 3",
   },
   {
-    user_id: 1,
-    blog_id: 3,
+    userId: 1,
+    blogId: 3,
     comment: "This is a comment for blog 2",
   },
 ];

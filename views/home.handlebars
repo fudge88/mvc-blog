@@ -1,9 +1,9 @@
 <header>
-    {{#if loggedIn}}
-    {{> private-nav}}
-    {{else}}
-    {{> public-nav}}
-    {{/if}}
+  {{#if isLoggedIn}}
+    {{> private-navbar}}
+  {{else}}
+    {{> public-navbar}}
+  {{/if}}
 </header>
 
 <main>

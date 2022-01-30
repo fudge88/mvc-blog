@@ -1,24 +1,28 @@
 <header>
-    {{> public-nav}}
+    {{> public-navbar}}
 </header>
 
+<main>
 <div class="signupFrm">
   <form id="login-form" class="form">
     <h1 class="title">Login</h1>
-
     <div class="inputContainer">
-      <input type="email" class="input" id="email-input" placeholder="a" />
-      <label for="email-input" class="label">Email</label>
+      <input type="email" class="input" id="email" placeholder="a" />
+      <label for="email" class="label">Email</label>
     </div>
-
     <div class="inputContainer">
-      <input type="password" class="input" id="password-input" placeholder="a" />
-      <label for="password-input" class="label">Password</label>
+      <input type="password" class="input" id="password" placeholder="a" />
+      <label for="password" class="label">Password</label>
     </div>
-
-    <input type="submit" class="submitBtn" value="LogIn" />
+          <div class="d-grid gap-2">
+        <button type="submit" class="btn submitBtn">Login</button>
+      </div>
+    <div class="mb-3 text-center">
+      <div id="error-message" class="form-text text-danger"></div>
+    </div>
   </form>
 </div>
+</main>
 
 <footer>
     {{> footer}}

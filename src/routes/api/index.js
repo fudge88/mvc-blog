@@ -1,11 +1,11 @@
 const { Router } = require("express");
 
-const blogRoutes = require("./blog-routes");
-const commentRoutes = require("./comment-routes");
+const blogs = require("./blogs");
+const comments = require("./comments");
 
 const router = Router();
 
-router.use("/blogs", blogRoutes);
-router.use("/comments", commentRoutes);
+router.use("/blogs", blogs);
+router.use("/comments", comments);
 
 module.exports = router;

@@ -11,44 +11,39 @@ const login = async (req, res) => {
     );
 
     if (Object.keys(payload).length !== 2) {
-      return res
-        .status(400)
-        .json({ success: false, error: "please complete all fields" });
+      console.log(`[ERROR]: Failed to login user | Invalid fields`);
+      return res.status(400).json({ success: false });
     }
 
     const user = await User.findOne({ where: { email: payload.email } });
 
     if (!user) {
-      return res
-        .status(404)
-        .json({ success: false, error: "User does not exist" });
+      console.log(`[ERROR]: Failed to login user | User does not exist`);
+      return res.status(404).json({ success: false });
     }
 
-    const validPassword = await bcrypt.compare(payload.password, user.password);
+    const isValidPassword = await bcrypt.compare(
+      payload.password,
+      user.password
+    );
 
-    if (!validPassword) {
-      return res
-        .status(401)
-        .json({ success: false, error: "User Password incorrect" });
+    if (!isValidPassword) {
+      console.log(`[ERROR]: Failed to login user | Invalid password`);
+      return res.status(401).json({ success: false });
     }
-
-    const userInSession = {
-      id: user.get("id"),
-      email: user.get("email"),
-      username: user.get("username"),
-    };
 
     req.session.save(() => {
-      req.session.loggedIn = true;
-      req.session.user = userInSession;
+      req.session.isLoggedIn = true;
+      req.session.user = {
+        id: user.get("id"),
+        username: user.get("username"),
+      };
 
-      return res.json({ success: true, data: "Login Successful" });
+      return res.json({ success: true });
     });
   } catch (error) {
-    console.log(`[ERROR]: Login user failed | ${error.message}`);
-    return res
-      .status(500)
-      .json({ success: false, error: "Failed to login user" });
+    console.log(`[ERROR]: Failed to create user | ${error.message}`);
+    return res.status(500).json({ success: false });
   }
 };
 
@@ -58,37 +53,29 @@ const signup = async (req, res) => {
       ["username", "email", "password"],
       req.body
     );
+
     if (Object.keys(payload).length !== 3) {
-      return res
-        .status(400)
-        .json({ success: false, error: "please complete all fields" });
+      console.log(`[ERROR]: Failed to create user | Invalid fields`);
+      return res.status(400).json({ success: false });
     }
 
     await User.create(payload);
 
-    return res.json({ success: true, data: "Successfully created user" });
+    return res.json({ success: true });
   } catch (error) {
-    console.log(`[ERROR]: Create user failed | ${error.message}`);
-    return res
-      .status(500)
-      .json({ success: false, error: "Failed to create user" });
+    console.log(`[ERROR]: Failed to create user | ${error.message}`);
+    return res.status(500).json({ success: false });
   }
 };
 
 const logout = (req, res) => {
-  if (req.session.loggedIn) {
+  if (req.session.isLoggedIn) {
     req.session.destroy(() => {
-      return res
-        .status(204)
-        .json({ success: true, data: "Successfully logged out" });
+      return res.json({ success: true });
     });
   } else {
-    return res.status(404).json({ success: false, error: "Failed to logout" });
+    return res.status(404).json({ success: false });
   }
 };
 
-module.exports = {
-  login,
-  signup,
-  logout,
-};
+module.exports = { login, logout, signup };
