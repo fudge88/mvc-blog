@@ -1,4 +1,4 @@
-{{!-- <header>
+<header>
     {{#if loggedIn}}
     {{> private-nav}}
     {{else}}
@@ -52,15 +52,6 @@
 </div>
    
 
-</main>
-
-<section>
-  {{>blog-input}}
-</section>
-
-<footer>
-  {{> footer}}
-</footer> --}}
 
 <div class="container grid">
   {{#each blogs}}
@@ -89,9 +80,19 @@
               <a href="/blog/view/"> view</a>
             </p>
           </div>
-          <div class="font-italic text-end h5"><u>Italic text.</u></div>
+          <div class="text-end h5"><u>Italic text.</u></div>
         </div>
       </div>
     {{/staggeredDiv}}
   {{/each}}
 </div>
+
+<section>
+  {{>blog-input}}
+</section>
+
+</main>
+
+<footer>
+  {{> footer}}
+</footer>

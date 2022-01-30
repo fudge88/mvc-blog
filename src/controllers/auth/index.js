@@ -1,5 +1,7 @@
-const { getPayloadWithValidFieldsOnly } = require("../../helpers");
+const bcrypt = require("bcrypt");
+
 const { User } = require("../../models");
+const { getPayloadWithValidFieldsOnly } = require("../../helpers");
 
 const login = async (req, res) => {
   try {
@@ -22,7 +24,7 @@ const login = async (req, res) => {
         .json({ success: false, error: "User does not exist" });
     }
 
-    const validPassword = await user.checkPassword(payload.password);
+    const validPassword = await bcrypt.compare(payload.password, user.password);
 
     if (!validPassword) {
       return res

@@ -1,7 +1,5 @@
 const { logError } = require("../../utils/logger");
 
-const { Blogs } = require("../../models/Blog");
-
 const createNewBlog = async (req, res) => {
   res.send("createNewBlog");
 };

@@ -55,7 +55,7 @@ const handleLogout = async () => {
   });
   const data = await response.json();
   if (data.success) {
-    window.location.replace("/");
+    window.location.replace("/home");
   }
 };
 

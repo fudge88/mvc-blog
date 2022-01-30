@@ -1,7 +1,5 @@
 const { Router } = require("express");
 
-const { Blogs, Comments, Users } = require("../../models");
-
 const {
   createNewBlog,
   updateBlog,

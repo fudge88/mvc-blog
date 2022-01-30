@@ -1,10 +1,6 @@
 const { Router } = require("express");
 
-const { Blogs, Comments } = require("../../models");
-
 const {
-  getAllComments,
-  getCommentById,
   createNewComment,
   updateComment,
   deleteComment,

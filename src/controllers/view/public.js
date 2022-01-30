@@ -6,7 +6,10 @@ const renderSignup = (req, res) => {
   res.render("signup");
 };
 const renderLogin = (req, res) => {
-  res.render("login");
+  if (req.session.isLoggedIn) {
+    return res.redirect("/dashboard");
+  }
+  return res.render("login");
 };
 
 const renderHome = async (req, res) => {
