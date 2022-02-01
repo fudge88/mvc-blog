@@ -1,0 +1,61 @@
+<main>
+  {{!-- {{#if isLoggedIn}} --}}
+    {{> private-navbar}}
+  {{!-- {{else}} --}}
+    {{> public-navbar}}
+  {{!-- {{/if}} --}}
+
+  {{> delete-confirm-modal title="Confirm Delete Blog" message="Are you sure you want to delete the blog?" parent=../this name="blog"}}
+
+  <section>
+    <div class="jumbotron text-center">
+      <h1 class="display-4">{{title}}</h1>
+      <h6>Posted By: {{user.username}}</h6>
+      <hr />
+      <p class="lead fs-3">{{content}}</p>
+      <hr class="my-4">
+      <p class="text-muted">Created At: {{formatDate createdAt}}</p>
+      <p class="text-muted">Updated At: {{formatDate updatedAt}}</p>
+      {{#if isMyBlog}}
+        <div class="d-grid gap-2 col-sm-8 col-md-4 mx-auto">
+          <a class="submitBtn" type="button" href="/blogs-edit/{{id}}">Edit Blog</a>
+          <button class="btn btn-danger" id="delete-blog-btn" type="button" data-blog-id="{{id}}" data-bs-toggle="modal" data-bs-target="#confirm-delete-modal">Delete Blog</button>
+        </div>
+      {{/if}}
+    </div>
+  </section>
+
+  {{#if isLoggedIn}}
+    <section class="container mt-4 responsive-form">
+      <h2 class="text-center">Add your comments</h2>
+      <h6 class="text-center">{{username}}</h6>
+      <form id="comment-form" data-blog-id="{{id}}">
+        <div class="mb-3">
+          <label for="comment" class="form-label">Comment</label>
+          <textarea class="form-control" rows="3" id="comment"></textarea>
+        </div>
+        <div class="d-grid gap-2">
+          <button type="submit" class="submitBtn">Post Comment</button>
+        </div>
+        <div class="mb-3 text-center">
+          <div id="error-message" class="form-text text-danger"></div>
+        </div>
+      </form>
+    </section>
+  {{/if}}
+
+  <section class="container my-4">
+    <h2 class="text-center">Comments</h2>
+    <ul class="list-group my-4">
+    {{#each comments}}
+      <li class="list-group-item list-group-item-action p-3 m-3" aria-current="true">
+        <div class="d-flex w-100 justify-content-between">
+          <h5 class="mb-1">{{user.username}}</h5>
+          <small>{{formatDate createdAt}}</small>
+        </div>
+        <p class="mb-1">{{comment}}</p>
+      </li>
+    {{/each}}
+    </ul>
+  </section>
+</main>

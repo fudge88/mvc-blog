@@ -1,0 +1,82 @@
+<header>
+    {{> private-navbar}}
+</header>
+
+<main>
+  <div class="container text-center">
+    <h1>Hi {{user.username}}</h1>
+    {{#if blogCount}}
+    <h3 class="container banner mt-4">
+      You have currently have {{blogCount}} blog(s)
+    </h3>
+    {{else}}
+    <h3 class="container banner mt-4">
+      You currently have no Blogs/Comments
+    </h3>
+    {{/if}}
+  </div>
+
+    {{!-- blogs --}}
+    <div class="container parent">
+      <div class="blog-container">
+        {{#if blogs.length}}
+        <div class="d-flex flex-row justify-content-evenly flex-wrap">
+          {{#each blogs}}
+            {{> blog-card}}
+          {{/each}}
+        </div>
+        {{else}}
+        <div class="alert alert-dark text-center" role="alert">
+          <h3 class="mt-2">Get Blogging {{user.username}}, you currently have no blogs!</h3>
+        </div>
+      {{/if}}
+      </div>
+
+      <!-- comments history -->
+      <div class="comment-container">
+        <!-- comment 1 -->
+        <div class="card mb-2">
+          <div class="card-body">
+            This is some text within a dfgghtrgrthrthrhgfgfgfgfgfgfgcard body.
+          </div>
+          <div class="text-center">
+            <a href="#" class="card-link">Edit <i class="fas fa-pen"></i></a>
+            <a href="#" class="card-link"
+              >Delete <i class="fas fa-trash"></i
+            ></a>
+          </div>
+        </div>
+        <!-- comment 2 -->
+        <div class="card mb-2">
+          <div class="card-body">This is some text within a card body.</div>
+          <div class="text-center">
+            <a href="#" class="card-link">Edit <i class="fas fa-pen"></i></a>
+            <a href="#" class="card-link"
+              >Delete <i class="fas fa-trash"></i
+            ></a>
+          </div>
+        </div>
+        <!-- comment 3 -->
+        <div class="card mb-2">
+          <div class="card-body">This is some text within a card body.</div>
+          <div class="text-center">
+            <a href="#" class="card-link">Edit <i class="fas fa-pen"></i></a>
+            <a href="#" class="card-link"
+              >Delete <i class="fas fa-trash"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+    </div>
+</main>
+
+
+<section>
+    {{>blog-input}}
+</section>
+
+
+
+<footer>
+    {{> footer}}
+</footer>

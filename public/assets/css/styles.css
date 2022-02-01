@@ -1,0 +1,263 @@
+:root {
+  --pure: #ffffff;
+  --fresh: #0a5e0a;
+  --haze: #ccc;
+  --fog: #6c747c;
+  --dark: rgba(0, 0, 0, 0.863);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Open Sans", sans-serif;
+}
+
+/* navbar */
+
+.logo img {
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 12rem;
+}
+
+.navbar-nav {
+  float: none;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+}
+
+.navbar-nav > li {
+  display: inline-block;
+  float: none;
+}
+.navbar-light .navbar-nav .nav-link {
+  color: var(--fog);
+  font-family: "Road Rage", cursive;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+}
+
+.hero-img {
+  width: 33.33%;
+  padding: 3;
+}
+.banner {
+  background-color: var(--fresh);
+  padding: 1rem;
+  font-family: "Road Rage", cursive;
+  color: var(--pure);
+}
+
+.desc {
+  padding: 10px 10px 5px 10px;
+}
+
+.desc img {
+  width: 50%;
+  margin: 0 10px 10px 0;
+  float: left;
+}
+
+.desc p {
+  margin-bottom: 10px;
+}
+
+.blog-img {
+  width: 16rem;
+}
+/* sign in and sign up forms */
+.signupFrm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
+
+.form {
+  background-color: var(--pure);
+  width: 400px;
+  border-radius: 8px;
+  padding: 20px 40px;
+  box-shadow: 0 10px 25px rgba(92, 99, 105, 0.2);
+}
+
+.title {
+  font-family: "Road Rage", cursive;
+  font-size: 4rem;
+  margin-bottom: 2rem;
+}
+
+.inputContainer {
+  position: relative;
+  height: 45px;
+  width: 90%;
+  margin-bottom: 17px;
+}
+
+.input {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  border: 1px solid var(--haze);
+  border-radius: 7px;
+  font-size: 16px;
+  padding: 10px 20px;
+  outline: none;
+  background: none;
+  z-index: 1;
+}
+
+/* Hide the placeholder texts (a) */
+
+::placeholder {
+  color: transparent;
+}
+
+.label {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  padding: 0 4px;
+  background-color: var(--pure);
+  color: var(--haze);
+  font-size: 16px;
+  transition: 0.5s;
+  z-index: 0;
+}
+
+.submitBtn {
+  display: block;
+  margin-left: auto;
+  padding: 15px 30px;
+  border: none;
+  background-color: var(--fresh);
+  color: var(--pure);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-top: 30px;
+}
+
+.submitBtn:hover {
+  background-color: var(--dark);
+  transform: translateY(-2px);
+}
+
+.input:focus + .label {
+  top: -7px;
+  left: 3px;
+  z-index: 10;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--fresh);
+}
+
+.input:focus {
+  border: 2px solid var(--fresh);
+}
+
+.input:not(:placeholder-shown) + .label {
+  top: -7px;
+  left: 3px;
+  z-index: 10;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* dashboard */
+.parent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.blog-container {
+  flex: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.comment-container {
+  flex: 30%;
+  width: 200px;
+  padding: 5px;
+  background-color: var(--haze);
+}
+
+.comment-container .card-body {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* footer */
+.footer-basic {
+  padding: 40px 0;
+  background-color: var(--pure);
+  color: var(--fresh);
+}
+
+.footer-basic ul {
+  padding: 0;
+  list-style: none;
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+.footer-basic li {
+  padding: 0 10px;
+}
+
+.footer-basic ul a {
+  color: inherit;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.footer-basic ul a:hover {
+  opacity: 1;
+}
+
+.footer-basic .copyright {
+  margin-top: 15px;
+  text-align: center;
+  font-size: 13px;
+  color: var(--fog);
+  margin-bottom: 0;
+}
+
+@media (max-width: 576px) {
+  .logo img {
+    height: 8rem;
+  }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 992px) {
+}
+
+@media (max-width: 1200px) {
+  .blog-container,
+  .comment-container {
+    flex: 100%;
+  }
+}
+
+@media (max-width: 1400px) {
+}

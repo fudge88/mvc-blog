@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="banner mt-4">
+    <h3 class="text-center">Post Your Blog</h3>
+  </div>
+  <form class="mt-4" id="new-blog-form">
+    <div class="inputContainer">
+      <input type="text" class="input" id="title" placeholder="a" />
+      <label for="title" class="label">Title</label>
+    </div>
+    <div class="inputContainer">
+      <input type="text" class="input" id="blogImg" placeholder="a" />
+      <label for="blogImg" class="label">Your Image URL</label>
+    </div>
+    <div class="inputContainer">
+      <textarea rows="3" class="input" id="content" placeholder="a"></textarea>
+      <label for="content" class="label">Write your blog</label>
+    </div>
+    <div class="form-group row mt-5">
+      <div class="col">
+        <button type="submit" class="submitBtn mt-5">Create Blog</button>
+      </div>
+    </div>
+    <div class="mb-3 text-center">
+      <div id="error-message" class="form-text text-danger"></div>
+    </div>
+  </form>
+</div>

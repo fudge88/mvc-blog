@@ -1,0 +1,72 @@
+<header>
+  {{#if isLoggedIn}}
+    {{> private-navbar}}
+  {{else}}
+    {{> public-navbar}}
+  {{/if}}
+</header>
+
+<main>
+  
+  <!-- row of 3 images -->
+  <div class="container">
+    <div class="row">
+      <div class="column hero-img">
+        <img
+          src="https://images.unsplash.com/photo-1542202229-7d93c33f5d07?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8Zm9yZXN0fGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+          alt="Mountains"
+          style="width: 100%"
+        />
+      </div>
+      <div class="column hero-img">
+        <img
+          src="https://images.unsplash.com/photo-1498855926480-d98e83099315?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MjR8fG1vdW50YWlufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+          alt="Snow"
+          style="width: 100%"
+        />
+      </div>
+      <div class="column hero-img">
+        <img
+          src="https://images.unsplash.com/photo-1622630285247-8ee379e1e3e7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTN8fHdvb2RsYW5kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+          alt="Forest"
+          style="width: 100%"
+        />
+      </div>
+    </div>
+  </div>
+
+  <!-- banner -->
+  <div class="container banner mt-4">
+    <h2 class="text-center">Off The GRID - Trails Treks Trips and Tips</h2>
+  </div>
+
+  <div class="container mt-4">
+    <h2 class="text-center">Start Exploring</h2>
+  </div>
+  <!-- grid -->
+
+<div class="container">
+  <h2 class="text-center">Our Blogs</h2>
+    <hr />
+      {{#if blogs.length}}
+        <div class="d-flex flex-row justify-content-evenly flex-wrap">
+          {{#each blogs}}
+            {{> blog-card}}
+          {{/each}}
+        </div>
+        {{else}}
+        <div class="alert alert-info text-center" role="alert">
+          There are no blogs to show
+        </div>
+      {{/if}}
+</div>
+
+<section>
+  {{>blog-input}}
+</section>
+
+</main>
+
+<footer>
+  {{> footer}}
+</footer>
