@@ -18,6 +18,12 @@ const schema = {
     type: DataTypes.TEXT,
     allowNull: false,
   },
+  blogImg: {
+    type: DataTypes.STRING,
+    defaultValue:
+      "https://www.muchbetteradventures.com/magazine/content/images/2019/11/22103346/iStock-1067310772.jpg",
+    allowNull: false,
+  },
   userId: {
     type: DataTypes.INTEGER,
     allowNull: false,
