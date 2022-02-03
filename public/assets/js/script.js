@@ -96,7 +96,7 @@ const handleCreateBlog = async (event) => {
 
   const title = $("#title").val();
   const content = $("#content").val();
-  const blogImg = $("blogImg").val();
+  const blogImg = $("#blogImg").val();
 
   if (title && content && blogImg) {
     try {
@@ -105,17 +105,17 @@ const handleCreateBlog = async (event) => {
         content,
         blogImg,
       });
-
+      console.log(data);
       if (data.success) {
         window.location.replace("/dashboard");
       } else {
-        renderError("Failed to create blog");
+        renderError("Failed to create blog - else");
       }
     } catch (error) {
-      renderError("Failed to create blog");
+      renderError("Failed to create blog catch");
     }
   } else {
-    renderError("Failed to create blog");
+    renderError("Failed to create blog if we dont have all elements");
   }
 };
 

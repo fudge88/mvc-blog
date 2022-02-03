@@ -1,9 +1,9 @@
 <main>
-  {{!-- {{#if isLoggedIn}} --}}
+  {{#if isLoggedIn}}
     {{> private-navbar}}
-  {{!-- {{else}} --}}
+  {{else}}
     {{> public-navbar}}
-  {{!-- {{/if}} --}}
+  {{/if}}
 
   {{> delete-confirm-modal title="Confirm Delete Blog" message="Are you sure you want to delete the blog?" parent=../this name="blog"}}
 
