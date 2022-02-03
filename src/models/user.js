@@ -19,6 +19,14 @@ const schema = {
     },
     unique: true,
   },
+
+  password: {
+    type: DataTypes.STRING,
+    allowNull: false,
+    validate: {
+      len: [10],
+    },
+  },
   email: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -26,13 +34,6 @@ const schema = {
       isEmail: true,
     },
     unique: true,
-  },
-  password: {
-    type: DataTypes.STRING,
-    allowNull: false,
-    validate: {
-      len: [8],
-    },
   },
 };
 

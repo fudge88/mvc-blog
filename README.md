@@ -188,3 +188,5 @@ please contact me through the links below:
 [GitHub](https://github.com/fudge88) Profile
 
 Email: akhlaq.fahra@gmail.com
+
+thanks
