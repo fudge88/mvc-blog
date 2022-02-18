@@ -8,9 +8,9 @@ const renderLogin = (req, res) => {
 };
 
 const renderSignUp = (req, res) => {
-  if (req.session.isLoggedIn) {
-    return res.redirect("/dashboard");
-  }
+  // if (req.session.isLoggedIn) {
+  //   return res.redirect("/dashboard");
+  // }
   return res.render("signUp");
 };
 
