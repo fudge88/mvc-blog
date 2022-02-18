@@ -11,7 +11,7 @@ const renderSignUp = (req, res) => {
   // if (req.session.isLoggedIn) {
   //   return res.redirect("/dashboard");
   // }
-  return res.render("signUp");
+  return res.render("signup");
 };
 
 const renderDashboard = async (req, res) => {
