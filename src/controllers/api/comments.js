@@ -20,7 +20,6 @@ const createComment = async (req, res) => {
     console.log(`[ERROR]: Failed to create blog | ${error.message}`);
     return res.status(500).json({ success: false });
   }
-  return res.json({ success: false });
 };
 
 module.exports = { createComment };
