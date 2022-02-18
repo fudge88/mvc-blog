@@ -15,7 +15,7 @@ const auth = require("../../middleware/auth");
 const router = Router();
 
 router.get("/login", renderLogin);
-router.get("/sign-up", renderSignUp);
+router.get("/signup", renderSignUp);
 
 router.get("/dashboard", auth, renderDashboard);
 router.get("/create-blog", auth, renderCreateBlog);
