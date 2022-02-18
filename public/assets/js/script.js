@@ -63,7 +63,7 @@ const handleSignUp = async (event) => {
   const email = $("#email").val();
   const password = $("#password").val();
   const confirmPassword = $("#confirm-password").val();
-
+  console.log(email, username, password, confirmPassword);
   if (
     email &&
     username &&
@@ -71,6 +71,7 @@ const handleSignUp = async (event) => {
     confirmPassword &&
     password === confirmPassword
   ) {
+    console.log(email, username, password, confirmPassword);
     try {
       const data = await makeRequest("/auth/signup", "POST", {
         username,
